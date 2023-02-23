@@ -14,6 +14,13 @@ export interface RobotStructure {
 export interface UserCredentials {
   username: string;
   password: string;
+  email: string;
+}
+export interface UserRegisterStrucutre extends UserCredentials {
+  name: string;
+  phoneNumber: string;
+  adress: string;
+  image: string;
 }
 
 export type RobotsStructure = RobotStructure[];
