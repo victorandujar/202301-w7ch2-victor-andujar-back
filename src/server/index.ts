@@ -2,10 +2,10 @@ import morgan from "morgan";
 import express from "express";
 import cors from "cors";
 import { generalError, notFoundError } from "./middlewares/errorMiddlewares.js";
-import { robotsRouter } from "./routers/robotsRouters.js";
-import usersRouter from "./routers/usersRouters.js";
+import { robotsRouter } from "./routers/robotsRouters/robotsRouters.js";
+import usersRouter from "./routers/usersRouters/usersRouters.js";
 
-export const app = express();
+const app = express();
 
 app.disable("x-powered-by");
 
@@ -18,3 +18,5 @@ app.use("/users", usersRouter);
 
 app.use("/", notFoundError);
 app.use("/", generalError);
+
+export default app;
